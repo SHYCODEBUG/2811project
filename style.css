@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef3f9;
+    color: #17243a;
+}
+
+.container {
+    width: 90%;
+    max-width: 760px;
+    margin: 40px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin: 8px 0;
+    color: #2764c5;
+}
+
+header p {
+    color: #63718a;
+}
+
+.panel {
+    background: white;
+    padding: 26px;
+    margin-bottom: 18px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(29, 54, 88, 0.08);
+}
+
+.top-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: #63718a;
+}
+
+h2 {
+    line-height: 1.5;
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.choice {
+    background: #f0f4fa;
+    color: #17243a;
+    text-align: left;
+}
+
+.choice:hover {
+    background: #dce9fc;
+}
+
+.primary {
+    background: #2764c5;
+    color: white;
+}
+
+.secondary {
+    background: #e9eef5;
+    color: #17243a;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#feedback {
+    min-height: 24px;
+    color: #2764c5;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    color: #63718a;
+    font-size: 12px;
+    padding: 12px;
+}
+
+@media (max-width: 560px) {
+    .choices {
+        grid-template-columns: 1fr;
+    }
+
+    .top-line {
+        flex-direction: column;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+}
+
+/* 다크모드 */
+body.dark {
+    background: #0f1724;
+    color: #e6edf7;
+}
+
+body.dark .panel {
+    background: #1b2433;
+    box-shadow: none;
+}
+
+body.dark .choice {
+    background: #243047;
+    color: #e6edf7;
+}
+
+body.dark .choice:hover {
+    background: #2f3f5e;
+}
+
+body.dark .secondary {
+    background: #2a3649;
+    color: #e6edf7;
+}
+
+body.dark header h1,
+body.dark #feedback {
+    color: #7fb0ff;
+}
+
+body.dark header p,
+body.dark .top-line,
+body.dark footer {
+    color: #9aa8bf;
+}
+
+/* 비활성화된 보기 글씨가 흐리게 보이지 않도록 */
+.choice:disabled {
+    opacity: 1;
+    color: #17243a;
+}
+
+body.dark .choice:disabled {
+    color: #e6edf7;
+}
+
+/* 정답/오답 표시 (반드시 맨 아래에 둬야 다른 규칙에 덮이지 않음) */
+.choice.correct,
+.choice.correct:hover,
+.choice.correct:disabled {
+    background: #2e8b57;
+    color: white;
+}
+
+.choice.wrong,
+.choice.wrong:hover,
+.choice.wrong:disabled {
+    background: #c0392b;
+    color: white;
+}

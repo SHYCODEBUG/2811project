@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Check</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <p>JAVASCRIPT 수행평가</p>
+            <h1>Secure Check</h1>
+            <p>나의 보안 지식을 확인해 보세요.</p>
+        </header>
+
+        <section class="panel">
+            <div class="top-line">
+                <span id="question-number">문제 1 / 5</span>
+                <span id="score-label">현재 점수: 0점</span>
+            </div>
+
+            <h2 id="question">문제</h2>
+
+            <div class="choices">
+                <button class="choice" onclick="selectAnswer(0)">보기 1</button>
+                <button class="choice" onclick="selectAnswer(1)">보기 2</button>
+                <button class="choice" onclick="selectAnswer(2)">보기 3</button>
+                <button class="choice" onclick="selectAnswer(3)">보기 4</button>
+            </div>
+
+            <p id="feedback">보기를 선택하세요.</p>
+
+            <div class="actions">
+                <button class="primary" onclick="nextQuestion()">다음 문제</button>
+                <button class="secondary" onclick="restartQuiz()">처음부터</button>
+                <button class="secondary Brightenss" onclick="Brightnesscontrol()">다크모드</button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>퀴즈 결과</h2>
+            <p id="result">퀴즈를 모두 풀면 결과가 표시됩니다.</p>
+        </section>
+
+        <footer>보안 습관은 작은 실천에서 시작됩니다.</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
